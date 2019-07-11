@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view/>
+    <FooterInfo></FooterInfo>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FooterInfo from './components/FooterInfo.vue'
+import firebase from 'firebase'
+
+let config = {
+  apiKey: "AIzaSyA78QePkuZfX4hV0TcxC-KyCuddkMtxz-8",
+  authDomain: "u-lodging.firebaseapp.com",
+  databaseURL: "https://u-lodging.firebaseio.com",
+  projectId: "u-lodging",
+  storageBucket: "u-lodging.appspot.com",
+  messagingSenderId: "976627078440"
+}
+
+var app = firebase.initializeApp(config);
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    FooterInfo
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  margin-top: -10px;
+  background: white;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px; */
 }
 </style>

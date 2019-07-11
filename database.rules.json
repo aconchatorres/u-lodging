@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "careers": {
+      ".read": "auth == null"
+    },
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
